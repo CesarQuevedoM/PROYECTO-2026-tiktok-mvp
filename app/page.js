@@ -2,23 +2,19 @@ import { generateIdea } from '../lib/ideaGenerator';
 
 export default async function Home() {
   const idea = await generateIdea({
-    businessType: 'Restaurante',
-    goal: 'más clientes',
+    businessType: 'Negocio local',
+    goal: 'Vender más',
     city: 'Lima',
   });
 
   return (
-    <main style={{ padding: 40, fontFamily: 'Arial' }}>
-      <h1>🎯 TikTok Ideas MVP</h1>
-
-      <h2>Hook</h2>
-      <p>{idea.hook}</p>
-
-      <h2>Contenido</h2>
+    <main style={{ padding: '40px', fontFamily: 'sans-serif' }}>
+      <h1>Ideas de TikTok</h1>
+      <p><strong>Hook:</strong> {idea.hook}</p>
+      <p><strong>Contenido:</strong></p>
       <pre>{idea.content}</pre>
-
-      <h2>CTA</h2>
-      <p>{idea.cta}</p>
+      <p><strong>CTA:</strong> {idea.cta}</p>
     </main>
   );
+}
 }
